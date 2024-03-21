@@ -1,49 +1,33 @@
-## Description
+# Nest Used Auto Pricing API
+Fully functioning backend REST API allowing users to estimate how much their auto is worth based on make, model year and mileage.
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+Powered by Nest.js TypeScript and PostgreSQL.
 
-## Installation
+## Key Features
+* Backend codebase and database for an app
+* API Endpoints for managing users, geting auto value estimates, reporting the estimated value of vehicles, admin functionality for approving / rejecting user submitted data
+* User Authentication Service with password hashing + salting
+* Nest.js Node codebase served via Docker containers
 
-```bash
-$ npm install
-```
+## How To Use
+In order to run this application, you'll need the following:
+- Git
+- Docker
 
-## Running the app
-
-```bash
-# development
-$ npm run start
-
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
-```
-
-## Test
+## Installation and Setup
 
 ```bash
-# unit tests
-$ npm run test
+# Clone the repo
+$  git  clone  git@github.com:lokeam/nest-auto-value-api.git
 
-# e2e tests
-$ npm run test:e2e
+# Navigate to the eslab directory
+$  cd  nest-auto-value-api
 
-# test coverage
-$ npm run test:cov
+# Build the Docker container
+$  docker-compose build
+
+# Launch the Docker container
+$  docker-compose up
+
+# Open your browser of choice, go to http://127.0.0.0.0:8000/
 ```
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
