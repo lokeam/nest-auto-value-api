@@ -41,6 +41,22 @@ export class UsersController {
     return this.usersService.find(email);
   }
 
+  @Get('/whoami')
+  async whoAmI(@Session() session: any) {
+    const user = this.usersService.findOne(parseInt(session.userId));
+    if (!user) {
+      throw new NotFoundException('User not found');
+    }
+
+    console.log('session id: ', session.userId, '| user: ', user);
+    return user;
+  }
+
+  @Post('/signout')
+  signOut(@Session() session: any) {
+    session.userId = null;
+  }
+
   @Post('/signup')
   async createUser(@Body() body: CreateUserDto, @Session() session: any) {
     const user = await this.authService.signup(body.email, body.password);
