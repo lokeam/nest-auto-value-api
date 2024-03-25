@@ -29,7 +29,9 @@ describe('UsersController', () => {
     };
     dummyAuthService = {
       // signup: () => {},
-      // signin: () => {},
+      signin: (email: string, password: string) => {
+        return Promise.resolve({ id: 1, email, password } as UserEntity);
+      },
     };
 
     const module: TestingModule = await Test.createTestingModule({
@@ -67,5 +69,19 @@ describe('UsersController', () => {
   it('findUser returns a single user with given id', async () => {
     const user = await controller.findUser('1');
     expect(user).toBeDefined();
+  });
+
+  it('signin updates session object and returns user', async () => {
+    const session = { userId: 2 };
+    const user = await controller.signin(
+      {
+        email: 'asdf@adsf.com',
+        password: 'asdf',
+      },
+      session,
+    );
+
+    expect(user.id).toEqual(1);
+    expect(session.userId).toEqual(1);
   });
 });
