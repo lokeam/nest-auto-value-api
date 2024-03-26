@@ -24,5 +24,5 @@ export class ReportEntity {
   lat: number;
 
   @Column()
-  milage: number;
+  mileage: number;
 }

@@ -14,6 +14,7 @@ export class CreateReportDto {
   @IsString()
   model: string;
 
+  @IsNumber()
   @Min(1930)
   @Max(2080)
   year: number;
