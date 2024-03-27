@@ -23,6 +23,9 @@ export class UserEntity {
   @OneToMany(() => ReportEntity, (report) => report.user)
   reports: ReportEntity[];
 
+  @Column({ default: true })
+  admin: boolean;
+
   @AfterInsert()
   logInsert() {
     console.log('Inserted user with id: ', this.id);
