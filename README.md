@@ -8,6 +8,7 @@ Powered by Nest.js TypeScript and PostgreSQL.
 * API Endpoints for managing users, geting auto value estimates, reporting the estimated value of vehicles, admin functionality for approving / rejecting user submitted data
 * User Authentication Service with password hashing + salting
 * Nest.js Node codebase served via Docker containers
+* Unit Testing for Controllers and Services handled by Jest.js
 
 ## How To Use
 In order to run this application, you'll need the following:
@@ -29,5 +30,7 @@ $  docker-compose build
 # Launch the Docker container
 $  docker-compose up
 
-# Open your browser of choice, go to http://127.0.0.0.0:8000/
+# Nest application loads on http://127.0.0.0.0:3000/
+
+# PGAdmin interface loads on http://127.0.0.0:5050
 ```
